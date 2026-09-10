@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@200;300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-void: #0a0a0a;
+  --color-obsidian: #111111;
+  --color-charcoal: #1a1a1a;
+  --color-graphite: #222222;
+  --color-steel: #2a2a2a;
+  --color-ash: #333333;
+  --color-smoke: #666666;
+  --color-silver: #999999;
+  --color-fog: #cccccc;
+  --color-bone: #e5e5e5;
+  --color-ivory: #f5f5f5;
+  --color-white: #ffffff;
+  --color-accent: #c8a55c;
+  --color-accent-light: #dfc07a;
+  --color-accent-dark: #a88a3c;
+  --color-energy: #e63946;
+  --color-energy-dark: #c5303c;
+  --font-heading: 'Bebas Neue', sans-serif;
+  --font-body: 'Outfit', sans-serif;
+  --font-editorial: 'Playfair Display', serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent) var(--color-obsidian);
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-void);
+  color: var(--color-ivory);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-void);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-obsidian);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 3px;
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+.font-editorial {
+  font-family: var(--font-editorial);
+}
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* Grain overlay */
+.grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Image reveal animation */
+.img-reveal {
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+}
+.img-reveal.revealed {
+  clip-path: inset(0 0 0% 0);
+}
+
+/* Lightbox */
+.lightbox-overlay {
+  backdrop-filter: blur(20px);
+}
+
+/* Custom cursor for gallery */
+.gallery-cursor {
+  cursor: pointer;
+}
+
+/* Magnetic button effect */
+.magnetic-btn {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Line animation */
+@keyframes lineGrow {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+.line-grow {
+  animation: lineGrow 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  transform-origin: left;
+}
+
+/* Pulse for CTA */
+@keyframes subtlePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200, 165, 92, 0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(200, 165, 92, 0); }
+}
+.pulse-accent {
+  animation: subtlePulse 3s ease-in-out infinite;
+}
+
+/* Text gradient */
+.text-gradient-accent {
+  background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent), var(--color-accent-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Parallax image container */
+.parallax-img {
+  will-change: transform;
+}
