@@ -1,14 +1,15 @@
 import { motion } from 'framer-motion';
 import { useInView } from '../hooks/useInView';
 import SectionHeader from './SectionHeader';
+import { images } from '../assets/images';
 
 const facilities = [
-  { src: '/images/facility1.jpg', alt: 'Cardio equipment area', label: 'Cardio Zone', span: 'col-span-2 row-span-2' },
-  { src: '/images/freeweights.jpg', alt: 'Free weights area', label: 'Free Weights', span: '' },
-  { src: '/images/facility4.jpg', alt: 'Functional training area', label: 'Functional Training', span: '' },
-  { src: '/images/cardio.jpg', alt: 'Treadmill area', label: 'Cardio Machines', span: 'col-span-2' },
-  { src: '/images/crossfit.jpg', alt: 'CrossFit training area', label: 'CrossFit Zone', span: '' },
-  { src: '/images/facility5.jpg', alt: 'Gym amenities', label: 'Amenities', span: '' },
+  { src: images.facility1, alt: 'Cardio equipment area', label: 'Cardio Zone', span: 'col-span-2 row-span-2' },
+  { src: images.freeweights, alt: 'Free weights area', label: 'Free Weights', span: '' },
+  { src: images.facility4, alt: 'Functional training area', label: 'Functional Training', span: '' },
+  { src: images.cardio, alt: 'Treadmill area', label: 'Cardio Machines', span: 'col-span-2' },
+  { src: images.crossfit, alt: 'CrossFit training area', label: 'CrossFit Zone', span: '' },
+  { src: images.facility5, alt: 'Gym amenities', label: 'Amenities', span: '' },
 ];
 
 export default function Facilities() {

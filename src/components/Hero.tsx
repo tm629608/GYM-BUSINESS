@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { MapPin, Clock, ChevronDown } from 'lucide-react';
+import { images } from '../assets/images';
 
 export default function Hero() {
   const scrollTo = (href: string) => {
@@ -12,7 +13,7 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="/images/hero-gym.jpg"
+          src={images.heroGym}
           alt="SK Fitness Centre gym interior"
           className="w-full h-full object-cover scale-110"
           loading="eager"

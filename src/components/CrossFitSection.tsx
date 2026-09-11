@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from '../hooks/useInView';
+import { images } from '../assets/images';
 
 export default function CrossFitSection() {
   const { ref, inView } = useInView(0.2);
@@ -9,7 +10,7 @@ export default function CrossFitSection() {
       {/* Background */}
       <div className="absolute inset-0">
         <img
-          src="/images/crossfit.jpg"
+          src={images.crossfit}
           alt="CrossFit training"
           className="w-full h-full object-cover"
           loading="lazy"

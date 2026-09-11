@@ -3,20 +3,21 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from '../hooks/useInView';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import SectionHeader from './SectionHeader';
+import { images } from '../assets/images';
 
-const images = [
-  { src: '/images/hero-gym.jpg', alt: 'Gym equipment' },
-  { src: '/images/crossfit.jpg', alt: 'CrossFit area' },
-  { src: '/images/bodybuilding.jpg', alt: 'Strength training' },
-  { src: '/images/facility1.jpg', alt: 'Cardio zone' },
-  { src: '/images/freeweights.jpg', alt: 'Free weights' },
-  { src: '/images/cycling.jpg', alt: 'Cycling studio' },
-  { src: '/images/facility4.jpg', alt: 'Functional training' },
-  { src: '/images/cardio.jpg', alt: 'Cardio machines' },
-  { src: '/images/group-training.jpg', alt: 'Group training' },
-  { src: '/images/facility5.jpg', alt: 'Amenities' },
-  { src: '/images/adult-sports.jpg', alt: 'Sports training' },
-  { src: '/images/nutrition.jpg', alt: 'Nutrition' },
+const galleryImages = [
+  { src: images.heroGym, alt: 'Gym equipment' },
+  { src: images.crossfit, alt: 'CrossFit area' },
+  { src: images.bodybuilding, alt: 'Strength training' },
+  { src: images.facility1, alt: 'Cardio zone' },
+  { src: images.freeweights, alt: 'Free weights' },
+  { src: images.cycling, alt: 'Cycling studio' },
+  { src: images.facility4, alt: 'Functional training' },
+  { src: images.cardio, alt: 'Cardio machines' },
+  { src: images.groupTraining, alt: 'Group training' },
+  { src: images.facility5, alt: 'Amenities' },
+  { src: images.adultSports, alt: 'Sports training' },
+  { src: images.nutrition, alt: 'Nutrition' },
 ];
 
 export default function Gallery() {
@@ -25,8 +26,8 @@ export default function Gallery() {
 
   const openLightbox = (i: number) => setLightbox(i);
   const closeLightbox = () => setLightbox(null);
-  const prev = () => setLightbox((p) => (p !== null ? (p - 1 + images.length) % images.length : null));
-  const next = () => setLightbox((p) => (p !== null ? (p + 1) % images.length : null));
+  const prev = () => setLightbox((p) => (p !== null ? (p - 1 + galleryImages.length) % galleryImages.length : null));
+  const next = () => setLightbox((p) => (p !== null ? (p + 1) % galleryImages.length : null));
 
   return (
     <section id="gallery" className="relative py-24 lg:py-36 bg-void">
@@ -40,9 +41,9 @@ export default function Gallery() {
 
         {/* Masonry Grid */}
         <div ref={ref} className="columns-2 lg:columns-3 xl:columns-4 gap-2 space-y-2">
-          {images.map((img, i) => (
+          {galleryImages.map((img, i) => (
             <motion.div
-              key={img.src}
+              key={i}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: i * 0.06, duration: 0.6 }}
@@ -106,14 +107,14 @@ export default function Gallery() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.3 }}
-              src={images[lightbox].src}
-              alt={images[lightbox].alt}
+              src={galleryImages[lightbox].src}
+              alt={galleryImages[lightbox].alt}
               className="max-w-full max-h-[85vh] object-contain"
               onClick={(e) => e.stopPropagation()}
             />
 
             <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-smoke text-xs tracking-wider">
-              {lightbox + 1} / {images.length}
+              {lightbox + 1} / {galleryImages.length}
             </div>
           </motion.div>
         )}

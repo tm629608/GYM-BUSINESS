@@ -1,24 +1,25 @@
 import { motion } from 'framer-motion';
 import { useInView } from '../hooks/useInView';
 import SectionHeader from './SectionHeader';
+import { images } from '../assets/images';
 
 const trainers = [
   {
     name: 'Head Coach',
     role: 'Strength & Conditioning',
-    image: '/images/trainer1.jpg',
+    image: images.trainer1,
     placeholder: true,
   },
   {
     name: 'CrossFit Coach',
     role: 'CrossFit & Functional Training',
-    image: '/images/trainer2.jpg',
+    image: images.trainer2,
     placeholder: true,
   },
   {
     name: 'Fitness Coach',
     role: 'Body Building & Nutrition',
-    image: '/images/trainer3.jpg',
+    image: images.trainer3,
     placeholder: true,
   },
 ];

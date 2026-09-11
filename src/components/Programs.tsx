@@ -3,47 +3,48 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from '../hooks/useInView';
 import { ArrowRight } from 'lucide-react';
 import SectionHeader from './SectionHeader';
+import { images } from '../assets/images';
 
 const programs = [
   {
     id: 'bodybuilding',
     title: 'BODY BUILDING',
-    image: '/images/bodybuilding.jpg',
+    image: images.bodybuilding,
     desc: 'Sculpt your physique with structured hypertrophy training, progressive overload protocols, and dedicated strength equipment designed for serious muscle building.',
     tags: ['Hypertrophy', 'Strength', 'Progressive'],
   },
   {
     id: 'group',
     title: 'GROUP TRAINING',
-    image: '/images/group-training.jpg',
+    image: images.groupTraining,
     desc: 'High-energy group sessions that combine functional movements, cardio conditioning, and team motivation. Push harder together.',
     tags: ['HIIT', 'Functional', 'Community'],
   },
   {
     id: 'crossfit',
     title: 'SPECIAL CROSSFIT',
-    image: '/images/crossfit.jpg',
+    image: images.crossfit,
     desc: 'Functional fitness at its finest. Our CrossFit programming combines Olympic lifting, gymnastics, and metabolic conditioning for complete athletic development.',
     tags: ['WOD', 'Olympic Lifts', 'Conditioning'],
   },
   {
     id: 'nutrition',
     title: 'DIET & NUTRITION',
-    image: '/images/nutrition.jpg',
+    image: images.nutrition,
     desc: 'Fuel your training with structured nutrition guidance. Personalised diet planning to support your body composition and performance goals.',
     tags: ['Meal Plans', 'Macros', 'Guidance'],
   },
   {
     id: 'cycling',
     title: 'CYCLING',
-    image: '/images/cycling.jpg',
+    image: images.cycling,
     desc: 'Indoor cycling sessions designed to build cardiovascular endurance, burn calories, and improve lower body power in an immersive group environment.',
     tags: ['Cardio', 'Endurance', 'Power'],
   },
   {
     id: 'sports',
     title: 'ADULT SPORTS',
-    image: '/images/adult-sports.jpg',
+    image: images.adultSports,
     desc: 'Rediscover the joy of sport. Our adult sports programs offer structured training and recreational play for all fitness levels.',
     tags: ['Recreation', 'Agility', 'Fun'],
   },

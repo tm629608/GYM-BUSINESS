@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from '../hooks/useInView';
 import SectionHeader from './SectionHeader';
+import { images } from '../assets/images';
 
 export default function Experience() {
   const { ref, inView } = useInView(0.2);
@@ -48,7 +49,7 @@ export default function Experience() {
           >
             <div className="aspect-[4/5] overflow-hidden">
               <img
-                src="/images/bodybuilding.jpg"
+                src={images.bodybuilding}
                 alt="Training at SK Fitness Centre"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
               />
